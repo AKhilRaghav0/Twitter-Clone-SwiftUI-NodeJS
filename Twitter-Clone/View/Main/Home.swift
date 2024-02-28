@@ -8,41 +8,54 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var selectedTab: Tab = .feed
+    
+    enum Tab {
+        case feed, search, gork, notifications, messages
+    }
+    
     var body: some View {
         VStack {
             ZStack {
-                TabView {
+                TabView(selection: $selectedTab) {
                     Feed()
                         .tabItem {
-                            Text("Feeds")
-                            Image(systemName: "house")
+                            Image(systemName: selectedTab == .feed ? "house.fill" : "house")
                         }
+                        .tag(Tab.feed)
+                    
                     SearchView()
                         .tabItem {
-                            Text("Search")
-                            Image(systemName: "magnifyingglass")
+                            Image(systemName: selectedTab == .search ? "magnifyingglass" : "magnifyingglass")
                         }
+                        .tag(Tab.search)
+                    
                     GorkView()
                         .tabItem {
-                            Text("Gork")
-                            Image(systemName: "square.stack.3d.up.slash.fill")
+                            Image(systemName: selectedTab == .gork ? "square.stack.3d.up.slash.fill" : "square.stack.3d.up.slash")
                         }
+                        .tag(Tab.gork)
+                    
                     NotificationsView()
                         .tabItem {
-                            Text("Notification")
-                            Image(systemName: "app.badge.fill")
+                            Image(systemName: selectedTab == .notifications ? "app.badge.fill" : "app.badge")
                         }
+                        .tag(Tab.notifications)
+                    
                     MessagesView()
                         .tabItem {
-                            Text("Messages")
-                            Image(systemName: "tray.2")
+                            Image(systemName: selectedTab == .messages ? "tray.2.fill" : "tray.2")
                         }
+                        .tag(Tab.messages)
                 }
+                .accentColor(Color.bg)
             }
         }
     }
 }
 
-#Preview {
-    Home()
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
 }
