@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @State private var selectedTab: Tab = .feed
+    @State var showCreateTweet: Bool = false
     
     enum Tab {
         case feed, search, gork, notifications, messages
@@ -49,6 +50,33 @@ struct Home: View {
                         .tag(Tab.messages)
                 }
                 .accentColor(Color.bg)
+                
+                
+                VStack {
+                    Spacer()
+//                    padding()
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showCreateTweet.toggle()
+                        }, label: {
+                            Image(systemName: "plus").renderingMode(.template)
+                                .frame(width: 20, height: 20).padding()
+                                .background(Color.bg2)
+                                .foregroundStyle(.white)
+                                .clipShape(Circle())
+
+                        })
+                        .padding()
+                        
+                        
+                    }
+                    .padding(.bottom, 65)
+                }
+                .sheet(isPresented: $showCreateTweet) {
+                    CreateTweetView()
+                }
             }
         }
     }

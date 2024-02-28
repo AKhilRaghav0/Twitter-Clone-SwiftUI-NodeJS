@@ -10,6 +10,7 @@ import SwiftUI
 struct Feed: View {
     var body: some View {
         Text("FeedView")
+
     }
 }
 
