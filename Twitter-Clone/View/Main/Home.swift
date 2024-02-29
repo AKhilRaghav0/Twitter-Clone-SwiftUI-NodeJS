@@ -22,24 +22,27 @@ struct Home: View {
                     Feed()
                         .tabItem {
                             Image(systemName: selectedTab == .feed ? "house.fill" : "house")
+                                
+
                         }
+                    
                         .tag(Tab.feed)
                     
                     SearchView()
                         .tabItem {
-                            Image(systemName: selectedTab == .search ? "magnifyingglass" : "magnifyingglass")
+                            Image(systemName: selectedTab == .feed ? "magnifyingglass" : "magnifyingglass")
                         }
                         .tag(Tab.search)
                     
                     GorkView()
                         .tabItem {
-                            Image(systemName: selectedTab == .gork ? "square.stack.3d.up.slash.fill" : "square.stack.3d.up.slash")
+                            Image(systemName: selectedTab == .feed ? "square.stack.3d.up.slash.fill" : "square.stack.3d.up.slash")
                         }
                         .tag(Tab.gork)
                     
                     NotificationsView()
                         .tabItem {
-                            Image(systemName: selectedTab == .notifications ? "app.badge.fill" : "app.badge")
+                            Image(systemName: selectedTab == .feed ? "bell" : "bell.fill")
                         }
                         .tag(Tab.notifications)
                     
@@ -49,7 +52,7 @@ struct Home: View {
                         }
                         .tag(Tab.messages)
                 }
-                .accentColor(Color.bg)
+                                .accentColor(Color.bg)
                 
                 
                 VStack {
