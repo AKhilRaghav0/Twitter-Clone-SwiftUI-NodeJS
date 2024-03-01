@@ -74,7 +74,7 @@ struct TweetCellView: View {
                         
                         .frame(width: 20, height: 20)
                 })
-                
+             
                 Button(action: {
                     
                 }, label: {
