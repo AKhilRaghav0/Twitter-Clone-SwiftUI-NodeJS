@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MessagesView: View {
     var body: some View {
-        Text("MessagesView")
+        VStack {
+            ScrollView{
+                ForEach(0..<15) {_ in
+                    MessageCell()
+                }
+            }
+        }
     }
 }
 
