@@ -38,7 +38,7 @@ struct MessageCell: View {
                             .foregroundStyle(.gray)
                     }
                     
-                    Text("Zinda hai na bsdk?")
+                    Text("Call me back, when Free!")
                         .foregroundStyle(.gray)
                     
                     Spacer()
