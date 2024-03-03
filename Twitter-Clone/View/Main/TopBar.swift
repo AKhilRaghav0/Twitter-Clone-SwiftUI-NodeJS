@@ -15,19 +15,29 @@ struct TopBar: View {
                 Button(action: {
                     
                 }, label: {
-                    Image(systemName: "line.horizontal.3")
-                        .font(.system(size: 24))
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+//                        .font(.system(size: 24))
                         .foregroundColor(Color.bg2)
                 })
                 Spacer(minLength: 0)
                 
-                Image(systemName: "bird")
+                Image(systemName: "swift")
                     .font(.system(size: 24))
                     .foregroundStyle(Color.bg2)
                     .padding(.trailing)
                     .frame(width: 20, height: 20)
                 
                 Spacer(minLength: 0)
+                
+                Image(systemName: "gear")
+                    .font(.system(size: 24))
+                    .foregroundStyle(Color.bg2)
+                    .padding(.trailing)
+                    .frame(width: 20, height: 20)
             }
             .padding()
             
