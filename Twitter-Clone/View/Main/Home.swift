@@ -25,6 +25,7 @@ struct Home: View {
                                 
 
                         }
+//                        .navigationBarHidden(true)
                     
                         .tag(Tab.feed)
                     
@@ -33,24 +34,28 @@ struct Home: View {
                             Image(systemName: selectedTab == .feed ? "magnifyingglass" : "magnifyingglass")
                         }
                         .tag(Tab.search)
+//                        .navigationBarHidden(true)
                     
                     GorkView()
                         .tabItem {
                             Image(systemName: selectedTab == .feed ? "square.stack.3d.up.slash.fill" : "square.stack.3d.up.slash")
                         }
                         .tag(Tab.gork)
+//                        .navigationBarHidden(true)
                     
                     NotificationsView()
                         .tabItem {
                             Image(systemName: selectedTab == .feed ? "bell" : "bell.fill")
                         }
                         .tag(Tab.notifications)
+//                        .navigationBarHidden(true)
                     
                     MessagesView()
                         .tabItem {
                             Image(systemName: selectedTab == .messages ? "tray.2.fill" : "tray.2")
                         }
                         .tag(Tab.messages)
+//                        .navigationBarHidden(true)
                 }
                                 .accentColor(Color.bg)
                 

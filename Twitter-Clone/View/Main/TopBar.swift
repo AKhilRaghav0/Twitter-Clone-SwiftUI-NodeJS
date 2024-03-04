@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct TopBar: View {
+
+    @Binding var x: CGFloat
     @State var width = UIScreen.main.bounds.width
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    
+                    withAnimation {
+                        x = 0
+                    }
                 }, label: {
                     Image("logo")
                         .resizable()
@@ -33,9 +37,9 @@ struct TopBar: View {
                 
                 Spacer(minLength: 0)
                 
-                Image(systemName: "gear")
+                Image(systemName: "gearshape")
                     .font(.system(size: 24))
-                    .foregroundStyle(Color.bg2)
+                    .foregroundStyle(Color.bg)
                     .padding(.trailing)
                     .frame(width: 20, height: 20)
             }
@@ -46,10 +50,10 @@ struct TopBar: View {
                 .foregroundStyle(.gray)
                 .opacity(0.3)
         }
-        .background(Material.thinMaterial)
+        .background(Material.thick)
     }
 }
-
-#Preview {
-    TopBar()
-}
+//
+//#Preview {
+//    TopBar()
+//}

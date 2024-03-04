@@ -84,7 +84,7 @@ struct SlideMenu: View {
 
                         }
                         .padding(.top, 20)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(Color.bg3)
                         
                     })
                     
@@ -101,7 +101,8 @@ struct SlideMenu: View {
 
                         }
                         .padding(.top, 20)
-                        .foregroundStyle(.black)
+                        .padding(.bottom, 20)
+                        .foregroundStyle(Color.bg3)
                         
                     })
                   
@@ -163,7 +164,8 @@ struct SlideMenu: View {
                 .padding(.top, edges!.top == 0 ? 15 : edges!.top)
                 .padding(.bottom, edges!.bottom == 0 ? 15 : edges!.bottom)
                 .frame(width: UIScreen.main.bounds.width - 90)
-                .background(Color.white)
+//                .background(Color.white)
+                .background(Material.thick)
                 .ignoresSafeArea(.all, edges: .vertical)
                 
                 Spacer()
